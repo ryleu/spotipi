@@ -26,4 +26,4 @@ jobs:
         with:
           context: image
           push: true
-          tags: "ghcr.io/ryleu/spotifyd-docker"
+          tags: "ghcr.io/ryleu/spotifyd"
