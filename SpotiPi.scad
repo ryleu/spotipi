@@ -37,15 +37,15 @@ use <BOSL/masks.scad>
 // hat dimensions
     hat_elevation = 16;
 
-    aux_percentage_margin = 1.1;
-    rca_percentage_margin = 1.5;
+    aux_margin = 1;
+    rca_margin = 1;
 
     // cutouts
     aux_offset = 15.5;
-    aux_size = [aux_percentage_margin * 6.5 / 2, 2.2]; // radius, vertical offset from board
+    aux_size = [(aux_margin + 6.5) / 2, 4]; // radius, vertical offset from board
 
-    rca_offsets = [30.5, 48];
-    rca_size = [rca_percentage_margin * 8.5 / 2, 6.5]; // radius, vertical offset from board
+    rca_offsets = [31.5, 49];
+    rca_size = [(rca_margin + 8.5) / 2, 8.5]; // radius, vertical offset from board
 
 // calculated
     //// offset from the bounding box to the start of the board
@@ -231,7 +231,7 @@ module bottom() {
 
 module door() {
     translate([
-        bottom_depth * 2 + 3,
+        bottom_depth * 2,
         0,
         0
     ]) rotate([
@@ -250,7 +250,7 @@ module top() {
     ];
     
     translate([
-        bottom_depth + internal_height + 6,0,0
+        bottom_depth + internal_height + 12,0,0
     ]) difference() {
         translate([
             dims[0] / 2,
